@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const app = express()
+const PORT = process.env.PORT || 5000
 
 const publicdir = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../fpages/views')
@@ -82,5 +83,7 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(5000, () => {console.log('Listening on 5000...')})
+
+
+app.listen(PORT, () => {console.log(`Listening on ${PORT}...`)})
 
